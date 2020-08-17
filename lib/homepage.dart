@@ -43,7 +43,13 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
         SizedBox(height: 20.0),
-        _buildIcon(0)
+        Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: _icons
+                .asMap()
+                .entries
+                .map((MapEntry entry) => _buildIcon(entry.key))
+                .toList())
       ],
     )));
   }

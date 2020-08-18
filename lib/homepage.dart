@@ -9,6 +9,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  int _selectedIndex = 0;
   List<IconData> _icons = [
     FontAwesomeIcons.plane,
     FontAwesomeIcons.bed,
@@ -17,14 +18,26 @@ class _MyHomePageState extends State<MyHomePage> {
   ];
 
   Widget _buildIcon(int index) {
-    return Container(
-      height: 68.0,
-      width: 68.0,
-      decoration: BoxDecoration(
-          color: Theme.of(context).accentColor,
-          borderRadius: BorderRadius.circular(30)),
-      child: Icon(_icons[index],
-          size: 25.0, color: Theme.of(context).primaryColor),
+    return GestureDetector(
+      onTap: () {
+        setState(() {
+          _selectedIndex = index;
+        });
+      },
+      child: Container(
+        height: 68.0,
+        width: 68.0,
+        decoration: BoxDecoration(
+            color: _selectedIndex == index
+                ? Theme.of(context).accentColor
+                : Color(0xFFE7EBEE),
+            borderRadius: BorderRadius.circular(30)),
+        child: Icon(_icons[index],
+            size: 25.0,
+            color: _selectedIndex == index
+                ? Theme.of(context).primaryColor
+                : Color(0xFEB4C1C4)),
+      ),
     );
   }
 

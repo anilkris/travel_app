@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:travel_app/widgets/destination_carousel.dart';
+import 'package:travel_app/widgets/hotel_carousel.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
@@ -65,7 +66,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 .map((MapEntry entry) => _buildIcon(entry.key))
                 .toList()),
         SizedBox(height: 30.0),
-        DestinationCarousel()
+        DestinationCarousel(),
+        SizedBox(
+          height: 30.0,
+        ),
+        HotelCarousel(),
       ],
     )));
   }

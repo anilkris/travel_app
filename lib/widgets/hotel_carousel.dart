@@ -44,7 +44,7 @@ class HotelCarousel extends StatelessWidget {
                 Hotel hotel = hotels[index];
                 return Container(
                   margin: EdgeInsets.all(10.0),
-                  width: 210,
+                  width: 240,
                   child: Stack(
                     alignment: Alignment.topCenter,
                     children: <Widget>[
@@ -60,7 +60,6 @@ class HotelCarousel extends StatelessWidget {
                               padding: const EdgeInsets.all(10.0),
                               child: Column(
                                   mainAxisAlignment: MainAxisAlignment.end,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
                                   children: <Widget>[
                                     Text(
                                       hotel.name,
@@ -99,7 +98,7 @@ class HotelCarousel extends StatelessWidget {
                           borderRadius: BorderRadius.circular(20.0),
                           child: Image(
                             height: 180,
-                            width: 180,
+                            width: 220,
                             image: AssetImage(hotel.imageUrl),
                             fit: BoxFit.cover,
                           ),
